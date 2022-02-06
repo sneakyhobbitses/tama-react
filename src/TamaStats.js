@@ -3,27 +3,42 @@ import ReactDOM from 'react-dom';
 import App from './index';
 import TamaStatBox from './TamaStatBox';
 
-class TamaStats extends React.Component {
-    render() {
-        const tamaStats = [
-            {
-                currentValue: 4,
-                statName: 'hongy',
-                maximumValue: 10
-            },
-            {
-                currentValue: 11,
-                statName: 'boreddddddddddd',
-                maximumValue: 10
-            },
-            {
-                currentValue: 0,
-                statName: 'gotta go',
-                maximumValue: 10
-            }
-        ];
+/* TODO by feb 16th 2022: 
+    1) Convert tamaStats to a piece of local state in TamaStats (state allows for the manipulation of the data ie to update)
+    2) Pass them to the StatBox components the same as you are right now
+    3) Add a button that satisfies the need of the tama for a single stat (sets it to 0)
 
-        const currentStats = tamaStats.map(curStats => (<TamaStatBox {...curStats} />));
+    I EXPECT THIS ONE TO REQUIRE QUESTIONS/MORE HELP
+    4) add a timer to cause one of the stats to tick down to 0 over time
+*/
+
+
+class TamaStats extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tamaStats: [
+                {
+                    currentValue: 4,
+                    statName: 'hongy',
+                    maximumValue: 10
+                },
+                {
+                    currentValue: 11,
+                    statName: 'boreddddddddddd',
+                    maximumValue: 10
+                },
+                {
+                    currentValue: 0,
+                    statName: 'gotta go',
+                    maximumValue: 10
+                }
+            ]
+        }
+    };
+    render() {
+
+        const currentStats = this.state.tamaStats.map(curStats => (<TamaStatBox {...curStats} />));
         return (
             <div>
                 {currentStats}
