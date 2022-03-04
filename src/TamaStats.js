@@ -20,28 +20,41 @@ class TamaStats extends React.Component {
             tamaStats: [
                 {
                     currentValue: 4,
+                    key: 'hongy',
                     statName: 'hongy',
                     maximumValue: 10
                 },
                 {
                     currentValue: 11,
+                    key: 'boreddddddddddd',
                     statName: 'boreddddddddddd',
                     maximumValue: 10
                 },
                 {
                     currentValue: 0,
+                    key: 'gotta go',
                     statName: 'gotta go',
                     maximumValue: 10
                 }
             ]
+        };
+        this.handleClick = this.handleClick.bind(this);
+        handleClick(e) {
+            this.setState({ currentValue: 0 });
         }
-    };
+    }
     render() {
-
         const currentStats = this.state.tamaStats.map(curStats => (<TamaStatBox {...curStats} />));
         return (
             <div>
-                {currentStats}
+                <p>
+                    {currentStats}
+                </p>
+                <p>
+                    <button onClick={this.handleClick}>
+                        help
+                    </button>
+                </p>
             </div>
         )
     }

@@ -8,7 +8,6 @@ class TamaStatBox extends React.Component {
         return (
             <div className='TamaStatBox'>
                 <p>{this.props.statName}: {this.props.currentValue}/{this.props.maximumValue}</p>
-                <p>{this.props.hungerValue}</p>
             </div>
         )
     }

@@ -5,11 +5,14 @@ import TamaStatBox from './TamaStatBox';
 
 class App extends React.Component {
   render() {
+
     return (
       <div>
-        <TamaStats />
+        <p>
+          <TamaStats />
+        </p>
       </div>
-    )
+    );
   }
 }
 
