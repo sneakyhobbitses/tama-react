@@ -2,16 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
 import TamaStatBox from './TamaStatBox';
-
-/* TODO by feb 16th 2022: 
-    1) Convert tamaStats to a piece of local state in TamaStats (state allows for the manipulation of the data ie to update)
-    2) Pass them to the StatBox components the same as you are right now
-    3) Add a button that satisfies the need of the tama for a single stat (sets it to 0)
-
-    I EXPECT THIS ONE TO REQUIRE QUESTIONS/MORE HELP
-    4) add a timer to cause one of the stats to tick down to 0 over time
-*/
-
+import SatiateTama from './SatiateTama';
 
 class TamaStats extends React.Component {
     constructor(props) {
@@ -20,41 +11,93 @@ class TamaStats extends React.Component {
             tamaStats: [
                 {
                     currentValue: 4,
-                    key: 'hongy',
+                    key: 'hunger',
                     statName: 'hongy',
                     maximumValue: 10
                 },
                 {
                     currentValue: 11,
-                    key: 'boreddddddddddd',
+                    key: 'boredom',
                     statName: 'boreddddddddddd',
                     maximumValue: 10
                 },
                 {
                     currentValue: 0,
-                    key: 'gotta go',
+                    key: 'bio',
                     statName: 'gotta go',
                     maximumValue: 10
                 }
             ]
         };
-        this.handleClick = this.handleClick.bind(this);
-        handleClick(e) {
-            this.setState({ currentValue: 0 });
-        }
+        this.handleClickStats = this.handleClickStats.bind(this);
+        this.handleClickBoredom = this.handleClickBoredom.bind(this);
+        this.handleClickBio = this.handleClickBio.bind(this);
+        // setInterval(() => {
+        //     const hungerTimerStats = this.state.tamaStats.map(curStats => {
+        //         let updatedStatValue = null;
+        //         if (curStats.key === 'hunger' && curStats.currentValue <= 9) {
+        //             updatedStatValue = ++curStats.currentValue
+        //         } else {
+        //             updatedStatValue = curStats.currentValue
+        //         };
+        //         return {
+        //             ...curStats,
+        //             currentValue: updatedStatValue
+        //         }
+        //     });
+        //     this.setState({
+        //         tamaStats: hungerTimerStats
+        //     })
+        // }, 3000);
     }
+
+    handleClickHunger() {
+        const updatedHunger = this.state.tamaStats.map(curStats => ({
+            ...curStats,
+            currentValue: curStats.key === 'hunger' ? 0 : curStats.currentValue
+        }));
+        this.setState({
+            tamaStats: updatedHunger
+        })
+        alert('u fed it');
+    };
+    handleClickBoredom() {
+        const updatedBoredom = this.state.tamaStats.map(curStats => ({
+            ...curStats,
+            currentValue: curStats.key === 'boredom' ? 0 : curStats.currentValue
+        }));
+        this.setState({
+            tamaStats: updatedBoredom
+        })
+        alert('not bored anymore!');
+    };
+    handleClickBio() {
+        const updatedBio = this.state.tamaStats.map(curStats => ({
+            ...curStats,
+            currentValue: curStats.key === 'bio' ? 0 : curStats.currentValue
+        }));
+        this.setState({
+            tamaStats: updatedBio
+        })
+        alert('*relieved*');
+    };
     render() {
-        const currentStats = this.state.tamaStats.map(curStats => (<TamaStatBox {...curStats} />));
+        const currentStats = this.state.tamaStats.map(curStats =>
+            (<TamaStatBox {...curStats} />));
         return (
             <div>
                 <p>
                     {currentStats}
                 </p>
-                <p>
-                    <button onClick={this.handleClick}>
-                        help
+                <div>
+                    <SatiateTama />
+                    <button onClick={this.handleClickBoredom}>
+                        play
                     </button>
-                </p>
+                    <button onClick={this.handleClickBio}>
+                        potty break
+                    </button>
+                </div>
             </div>
         )
     }
