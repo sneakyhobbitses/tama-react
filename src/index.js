@@ -7,10 +7,8 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
-        <p>
-          <TamaStats />
-        </p>
+      <div id="test-div">
+          <TamaStats />   
       </div>
     );
   }

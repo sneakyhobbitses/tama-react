@@ -1,3 +1,174 @@
-.TamaStatBox {
-    background-color: pink;
-};
+body {
+      background-color: mediumpurple;
+      color: snow;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-align: center;
+      cursor: crosshair;
+      font-size: 16px;
+}
+
+  ::selection {
+    background-color: rgb(192, 223, 241);
+  }
+
+    /* a.tama:link {
+    color: rgb(166, 142, 214); 
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 95%;
+    margin-top: 95%;
+    }
+
+    a.tama:visited {
+      color: rgb(153, 121, 216);
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+    
+    a.tama:hover {
+      color: rgb(166, 142, 214);
+      text-decoration: line-through;
+      cursor: grab;
+    }
+    
+    a.tama:active {
+      color: rgb(166, 142, 214);
+      background-color: none;
+      text-decoration: none;
+      cursor: wait;
+    }
+
+    a.nav:link {
+      color: snow; 
+      font-weight: bold;
+      text-decoration: none;
+    } */
+    
+    a.nav:visited {
+      color: snow;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+    
+    a.nav:hover {
+      color: mediumpurple;
+      text-decoration: line-through;
+      cursor: grab;
+    }
+    
+    a.nav:active {
+      color: rgb(246, 213, 102);
+      background-color: none;
+      text-decoration: none;
+      cursor: wait;
+    }
+
+    /* .first {
+        background-color: palevioletred;
+        color: snow;
+        font-size: 28px;
+        font-weight: bold;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .second {
+      background-color: snow;
+      color: mediumpurple;
+      width: auto;
+      height: 32px;
+      font-size: 32px;
+    }
+
+    .babbey-name-header {
+      background-color: snow;
+      color: palevioletred;
+      font-size: 38px;
+      margin: auto;
+      margin-top: 15px;
+      width: 40%;
+      font-variant: small-caps;
+    }
+
+    .interaction-log {
+      font-size: 40px;
+      margin-top: 40px;
+      font-variant: small-caps;
+      font-weight: bold;
+      width: 600px;
+      height: 250px;
+      overflow: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info {
+      margin-right: 40%;
+      margin-left: 40%;
+    } */
+
+    test-div {
+      color: plum;
+    }
+
+    #root {
+      color: plum;
+      font-size: 16px;
+    }
+
+    .topnav {
+      background-color: palevioletred;
+      border-width: 5px;
+      border-color: snow;
+      border-style: solid;
+      height: 36px;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .fortune {
+      background-color: snow;
+      border-width: 10px;
+      border-color: palevioletred;
+      color: mediumpurple;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top:  20px;
+      padding-bottom: 20px;
+      border-style: dashed;
+      height: auto;
+      width: auto;
+    }
+
+    .TamaStatBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .TamaStats {
+      background-color: palevioletred;
+      color: snow;
+      font-size: 24px;
+      font-weight: bolder;
+      text-align: center;
+    }
+
+  input {
+    font-size: 16px;
+  }
+
+button {
+background-color: palevioletred;
+color: snow;
+border-style: solid;
+border-color: snow;
+margin-top: 10px;
+margin-right: 5px;
+margin-left: 5px;
+border-width: 5px;
+font-size: 20px;
+font-style: oblique;
+}

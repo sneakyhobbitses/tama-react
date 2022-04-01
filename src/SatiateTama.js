@@ -2,23 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
 import TamaStats from './TamaStats';
+import TamaStatBox from './TamaStatBox';
+import './SatiateTama.css';
 
 class SatiateTama extends React.Component {
-    handleClickStats(key) {
-        const satiatedStats = this.state.tamaStats.map(curStats => ({
-            ...curStats,
-            currentValue: this.props.key === 'bio' ? 0 : curStats.currentValue
-        }));
-        this.setState({
-            tamaStats: updatedHunger
-        })
-        alert('u fed it');
-    };
-    render() {
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
         return (
-            <button onClick={() => this.handleClickStats(satiatedStats.key)}>
-                play
-            </button >
+            <div className='SatiateButtons'>
+                <button className="SatiateTamaButton" onClick={() => {this.props.buttonClicker()}}>{this.props.addressNeed}</button>
+            </div>
         )
     }
 }
