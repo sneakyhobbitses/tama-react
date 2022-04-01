@@ -13,7 +13,7 @@ class SatiateTama extends React.Component {
     render() {
         return (
             <div className='SatiateButtons'>
-                <button className="SatiateTamaButton" onClick={() => { alert('suh dood'); this.props.buttonClicker() }}>{this.props.addressNeed}</button>
+                <button className="SatiateTamaButton" onClick={() => { alert('thank yoooooou <3'); this.props.buttonClicker() }}>{this.props.addressNeed}</button>
             </div>
         )
     }
